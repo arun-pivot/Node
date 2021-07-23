@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Timer Application</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="controllers/reportController.js"></script>
+  <script src="jquery.toaster.js"></script>
+
+
+</head>
+<body onload="buildTable()">
+    <div class="row">
+        <div class="col-sm-8">
+    <div class="card" style="
+    margin-left: 9%;
+    margin-top: 3%;
+">
+        <div class="card-header">
+      Report Table
+        </div>
+        <div class="card-body">
+            <table class="table table-striped" id ="data_table" >
+                                             
+                                            
+                <tbody id="myTable">
+                    
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+          <button class="btn btn-primary" onclick="calculateAvg()">Calculate</button>
+        </div>
+      </div>
+ 
+      </div>
+      </div>
+
+
+</body>
+</html>
