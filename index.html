@@ -18,28 +18,36 @@
       }
       })
       function sendToServer(){
-        $.ajax({
-        method: "POST",
-        url: "http://localhost:5000/data",
-        data: {
-         data:localStorage.getItem('Data')
-        },
-        success: function (response) {
+         stopTimer()
+         if(localStorage.getItem('Data')){
+            $.ajax({
+              method: "POST",
+              url: "http://localhost:5000/api/save",
+              data: {
+               data:localStorage.getItem('Data')
+              },
+              success: function (response) {
+              
+                $.toaster({ priority :'success', title :'Success', message :'Data Sent To Server'});
 
-          $.toaster({ priority :'success', title :'Success', message :'Data Sent To Server'});
-          
-        },
-        error: function (err) {
-          console.log(err);
-        }
-      })
-      }
+              },
+              error: function (err) {
+                console.log(err);
+              }
+              })   
+         }
+         else{
+            $.toaster({ priority :'success', title :'Success', message :'Data Not Found'});
+         }
+       }
   </script>
 </head>
 <body>
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center" style="padding: 2%;">
         <h1>Timer Application</h1>
-      </div>
+        <h5 id="secondViewer"></h5>
+        <marquee width="60%" direction="right" height="100px">Press Spacebar To Start The Timer</marquee>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
@@ -54,16 +62,14 @@
         </div>
         <hr>
         <div class="row">
-           
               <center>
                 <footer class="page-footer font-small blue">
-                    <a href="reports.html" class="btn btn-primary">Home</a>
+                    <a href="index.html" class="btn btn-primary">Home</a>
                     <a href="reports.html" class="btn btn-success">Reports</a>
                 </footer>
               </center>      
         </div>
   </div>
 </div>
-
 </body>
 </html>

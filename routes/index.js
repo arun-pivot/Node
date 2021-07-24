@@ -3,6 +3,6 @@ const indexController = require("../controllers");
 const notesRouter = require("./dataSet");
 
 router.get("/", indexController);
-router.use("/data", notesRouter);
+router.use("/api", notesRouter);
 
 module.exports = router;

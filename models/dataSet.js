@@ -9,5 +9,4 @@ const sessionSchema = mongoose.Schema({
 });
 
 const dataSetModel = mongoose.model("dataSet", sessionSchema);
-
 module.exports = dataSetModel;

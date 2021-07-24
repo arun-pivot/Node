@@ -3,10 +3,8 @@ const mongoose = require("mongoose");
 const _ = require("lodash");
 let avg = [0];
 const createDataSet = async (req, res, next) => {
-console.log(req.body)
     try {
         const { data } = req.body;
-        console.log(data)
         const dataSet = await Dataset.create({
             data
         });
@@ -39,17 +37,10 @@ const calculateAvg = async (req, res, next) => {
             });
             return r;
         }, []);
-        console.log(result)
         return res.status(200).send({ success: true, data: JSON.stringify(result) });
      } catch (error) {
          next(error);
      }
 };
-
-
-
-
-
-
 
 module.exports = { createDataSet, getAllDataSet,calculateAvg };

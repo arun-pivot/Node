@@ -6,6 +6,6 @@ const {
 } = require("../controllers/dataSetController");
 
 router.get("/", getAllDataSet);
-router.post("/", createDataSet);
-router.post("/avg", calculateAvg);
+router.post("/save", createDataSet);
+router.post("/get-average", calculateAvg);
 module.exports = router;
