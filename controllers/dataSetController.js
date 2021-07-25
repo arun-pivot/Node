@@ -6,7 +6,8 @@ const createDataSet = async (req, res, next) => {
     try {
         const { data } = req.body;
         const dataSet = await Dataset.create({
-            data
+            data:data,
+            createdAt: new Date()
         });
         return res.status(200).send({ success: true, data: dataSet });
      } catch (error) {
